@@ -1,7 +1,7 @@
 # JetBrains Plugin Article Structure
 
 This document reviews and suggests a new structure for the JetBrains plugin
-section of the documentation. In general, I would recommend this flow for all IDE plugins.
+section of the documentation. 
 
 ## Organization
 
@@ -34,6 +34,8 @@ the plugin automatically using current authentication applications and/or method
 screenshots since the user will be in the user interface. Also, should you make changes to the user interface, you will 
 need to find all the locations where these screenshots are taken and then replace them all. If the company policy is that
 each time you restart your IDE you need to authenticate your plugin, then it is important to state that in the quick tour.
+If you can create an automated process for authentication, then this section should be rewritten and added to the installation
+section. Most users will enable and authenticate the plugin as soon as it is installed.
 
 ### How To Section
 
@@ -41,15 +43,11 @@ In this section I would group the articles for **Dynamic logs**, **Snapshots**, 
 section almost always piques a reader's interest. In addition, in the future you may have additional things you want to add to 
 this section of the documentation.
 
+## General Comments
 
+1. I would recommend this flow for all IDE plugins. In the VSCode set, it seems you are missing the quick tour.
+2. In my opinion you have covered all that is needed for the plugin there does not appear to be any redundant articles in this section.
+3. Looking through some other parts of the documentation, I see there are other places where I would reorganize as well.
+This includes the `java` and `jvm` agent. The **System Requirements** is on its own page and really should be part of the **Installing the JVM agent**
+as part of the prerequisites.
 
-
-
-Please go through the articles above and suggest how you would document a Lightrun plugin.
-
-Please specify:
-What articles are the required articles?
-What articles are redundant?
-Do we need an additional breakdown?
-
-There is no need to write any article as part of this task, we are looking for a suggested article structure.
