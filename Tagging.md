@@ -1,21 +1,26 @@
 # Agent Tags
+ 
+Configuring your agent to use tags help you better visualize 
+and troubleshoot specific parts of your live running code. 
+Using the agent's tag, you can map your organizational structure onto system
+objects without requiring the client to store these mappings.
 
-Tagging allows organizations to group agents together by using a meaningful name, the
-default tag for a Lightrun agent is “Production”.Tags enable users to map their own organizational structures onto system 
-objects in a loosely coupled fashion, without requiring clients to 
-store these mappings.
+## Use Cases
 
-Service deployments and batch processing pipelines are often multi-dimensional entities (e.g., multiple partitions or deployments, multiple release tracks, multiple tiers, multiple micro-services per tier). Management often requires cross-cutting operations, which breaks encapsulation of strictly hierarchical representations, especially rigid hierarchies determined by the infrastructure rather than by users.
+When you use tags, it is easy to then group agents together using a
+meaningful name. It is important to name the tags in such a way that they are easily identifiable and 
+are meaningful and relevant to users. It is common to name tags based on common functionality. For example:
+- Location of the agent (for example "east-coast-usa")
+- Purpose of the agent (for example, "counter-tracking")
+- Running environment of the agent (for example, "Production", "Staging", etc.)
 
-Tags are key/value pairs that are attached to objects, such as pods. 
-Tags are intended to be used to specify identifying attributes of 
-objects that are meaningful and relevant to users, but do not directly 
-imply semantics to the core system. Tags can be used to organize and to 
-select subsets of objects. Tags can be attached to objects at creation 
-time and subsequently added and modified at any time. Each object can have
-a set of key/value Tags defined. Each Key must be unique for a given object.
+You can configure multiple tags per agent to maximize efficiency in grouping agents' functionality.
+Once you have tagged your agents, they can then be filtered either through your IDE or from the command line. 
+[Lightrun Actions](https://docs.lightrun.com/actions/) can be bound to your tag so that you can trigger a request 
+to the agents that have that tag. This way agents can dynamically insert logs, metrics, and other snapshots 
+into production code. Actions that are bound to a tag are implicitly added to all agents that possess that tag.
 
-A Lightrun agent can be launched with one or more tags. 
-
-Actions that are added to an agent are deleted once the agent disconnects 
-from the Lightrun server. Actions that are added to tags are persistent.
+## Recommendations
+- Create tags that share common attributes that you will want to track.
+- Bind a [Lightrun Action](https://docs.lightrun.com/actions/) to the tag so that all agents with that tag are traceable.
+- 
