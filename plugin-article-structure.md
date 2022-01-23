@@ -5,6 +5,8 @@ section of the documentation.
 
 ## Organization
 
+The current structure of the JetBrains plugin section should be reorganized.
+
 
 
 
